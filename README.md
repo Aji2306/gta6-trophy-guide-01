@@ -2,7 +2,7 @@
 
 [![make.fun · gta6-trophy-guide-01](https://make.fun/badge/gta6-trophy-guide-01.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 [![rank](https://make.fun/badge/gta6-trophy-guide-01/Aji2306/gta6-trophy-guide-01/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
-[![reward](https://make.fun/badge/gta6-trophy-guide-01/Aji2306/gta6-trophy-guide-01/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+[![reward](https://make.fun/badge/gta6-trophy-guide-01/Aji2306/gta6-trophy-guide-01/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 
 An offline static guide and progress tracker for all 55 Grand Theft Auto VI PlayStation 5 trophies (1 Platinum, 2 Gold, 6 Silver, 46 Bronze). Crafted for the make.fun competition (`gta6-trophy-guide-01`), this application features comprehensive, original trophy guides citing Exophase and PSNProfiles, a persistent `localStorage` checklist with JSON export/import support, interactive kind and grade filters, live search, spoiler toggling, a step-by-step platinum roadmap, and a dedicated missable trophies view.
 
