@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grand Theft Auto VI Trophy Guide & Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <h1>Grand Theft Auto VI Trophy Guide & Tracker</h1>
+    <div class="make-up">55 Trophies: 1 Platinum, 2 Gold, 6 Silver, 46 Bronze</div>
+  </div>
+  <div class="stats-row">
+    <span id="progress-text">0 of 55 earned (0%)</span>
+    <span id="tracked-counters">PSN Tracked: Stunts 0/250 | Cards 0/3 | WAiNK 0/100 | Challenges 0/50</span>
+  </div>
+  <div class="progress-bar-container">
+    <div id="progress-bar" class="progress-bar-fill"></div>
+  </div>
+</header>
+
+<div class="tabs">
+  <button class="tab-btn active" data-target="checklist-tab">Checklist & Guide</button>
+  <button class="tab-btn" data-target="roadmap-tab">Platinum Roadmap</button>
+  <button class="tab-btn" data-target="missables-tab">Missable Trophies</button>
+</div>
+
+<!-- Checklist Tab -->
+<div id="checklist-tab" class="tab-content active">
+  <div class="controls">
+    <div class="control-group">
+      <label>Kind:
+        <select id="filter-kind">
+          <option value="all">All Kinds</option>
+          <option value="story">Story</option>
+          <option value="missable">Missable</option>
+          <option value="collectibles">Collectibles</option>
+          <option value="activities">Activities</option>
+          <option value="online">Online</option>
+        </select>
+      </label>
+      <label>Grade:
+        <select id="filter-grade">
+          <option value="all">All Grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label><input type="text" id="search-input" placeholder="Search trophies..."></label>
+    </div>
+    <div class="control-group">
+      <label><input type="checkbox" id="spoiler-toggle"> Hide story spoilers</label>
+      <button id="export-btn" type="button">Export Progress</button>
+      <label class="import-label">Import Progress<input id="import-input" type="file" accept="application/json"></label>
+    </div>
+  </div>
+
+  <div class="main-layout">
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 40px;">✓</th>
+            <th>Trophy</th>
+            <th style="width: 90px;">Grade</th>
+            <th>Summary Guide</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+
+    <div class="guide-pane" id="guide-pane">
+      <h2>Select a Trophy</h2>
+      <p style="color: var(--text-muted); font-size: 13px;">Click any trophy from the checklist to view its detailed step-by-step guide, strategic notes, and official sources.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Roadmap Tab -->
+<div id="roadmap-tab" class="tab-content">
+  <div class="view-card">
+    <h3>Platinum Roadmap to 100%</h3>
+    <p style="color: var(--text-muted); margin-bottom: 16px; font-size: 13px;">Follow this recommended chronological order to earn the Platinum trophy efficiently while avoiding all missable pitfalls.</p>
+    
+    <div class="roadmap-stage">
+      <h4>Stage 1: Main Story & Missable Story Trophies</h4>
+      <p>Complete all campaign chapters (Chapters 1-4, Gone Fishing, The Cartel Heist, etc.). Keep a sharp eye on missable story triggers such as 'You Gotta Know When to Get Off'. Ensure all chapter-specific requirements are met before advancing past points of no return.</p>
+    </div>
+    <div class="roadmap-stage">
+      <h4>Stage 2: Side Activities, Strangers & Freaks</h4>
+      <p>Meet and complete all 8 stranger strands across Leonida (Andy, Kenton, Billy, Randy, Tyrone, etc.), win 20 races, beat Cal at fishing, complete arcade games, and conquer the 42 Shooting Range challenges for gold.</p>
+    </div>
+    <div class="roadmap-stage">
+      <h4>Stage 3: Collectibles & World Exploration</h4>
+      <p>Uncover all 52 areas of Leonida, complete 250 Stunt Jumps, finish 3 Collectible Card sets, meditate at all 18 spots, WAiNK at 100 locations, discover 100 vehicles, purchase 8 garage properties, and register 10 vehicles in Scooter Bros.</p>
+    </div>
+    <div class="roadmap-stage">
+      <h4>Stage 4: Combat Grinds & Criminal Ventures</h4>
+      <p>Rob 5 bank vaults, raid illegal gang operations for all 9 gangs, spend $100,000 across shops, launder $250,000 in marked bills, score 5 kills in a single Combat Focus, and survive high-wanted level escapes.</p>
+    </div>
+    <div class="roadmap-stage">
+      <h4>Stage 5: Platinum Legend</h4>
+      <p>Clean up any remaining miscellaneous trophies and attain 100% total game completion to unlock 'Vice Got a Price!' Platinum.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Missables Tab -->
+<div id="missables-tab" class="tab-content">
+  <div class="view-card">
+    <h3>Missable Trophies & Point-of-No-Return Warnings</h3>
+    <p style="color: var(--text-muted); margin-bottom: 16px; font-size: 13px;">Built strictly from official descriptions and game pacing. Review these carefully to ensure no trophy is permanently locked out.</p>
+    <div id="missables-list"></div>
+  </div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
