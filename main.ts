@@ -8,18 +8,27 @@
  */
 
 import { cpSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { dirname, isAbsolute, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { buildDossier } from './vendor/makefun-frontend.ts';
 
-const baseDir = resolve();
+const baseDir = dirname(fileURLToPath(import.meta.url));
+if (process.env.MAKEFUN_OUTPUT_DIR !== undefined && !isAbsolute(process.env.MAKEFUN_OUTPUT_DIR)) {
+  throw new Error(`MAKEFUN_OUTPUT_DIR must be an absolute path, got: ${process.env.MAKEFUN_OUTPUT_DIR}`);
+}
 const destinationDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
+console.log(`[gta6-trophy-guide-01] baseDir: ${baseDir}, destinationDir: ${destinationDir}`);
 
 // Step 1: Ensure output directory tree exists
 mkdirSync(destinationDir, { recursive: true });
 mkdirSync(resolve(destinationDir, 'screenshots'), { recursive: true });
 
 // Step 2: Copy static application assets
-cpSync(resolve(baseDir, 'app'), resolve(destinationDir, 'app'), { recursive: true });
+const appPath = resolve(baseDir, 'app');
+if (!existsSync(appPath)) {
+  throw new Error(`Missing required application directory at: ${appPath}`);
+}
+cpSync(appPath, resolve(destinationDir, 'app'), { recursive: true });
 
 // Step 3: Copy screenshots if available
 const localScreenshotsPath = resolve(baseDir, 'screenshots');
